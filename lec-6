@@ -1,10 +1,10 @@
-（2）  
-  4) Virtual Address 2c03  
-     Virtual Address 7fd7  
+4) Virtual Address 2c03  
+   Virtual Address 7fd7  
      
   Virtual Address 2c03:  
-  --> pde index:0xb  pde contents:(valid 0, pfn 0x7f)  
-    --> Fault (page directory entry not valid)  
+  --> pde index:0xb  pde contents:(valid 1, pfn 0x44)  
+    --> pte index:0x0  pte contents:(valid 1, pfn 0x57)  
+      -> Translates to Physical Address 0xae3 --> Value: 0x16  
   
   Virtual Address 7fd7:  
     --> pde index:0x1f  pde contents:(valid 1, pfn 0x12)  
