@@ -1,0 +1,22 @@
+if __name__ == '__main__':
+    address = raw_input()
+    addrList = address.strip('\r\n').split(',')
+    window = 4
+    time = 0
+    workSet = {}
+    for item in addrList:
+        n = int(item)
+        time += 1
+        print "Access %d at time %d:" % (n, time)
+        if n in workSet:
+            print "hit"
+            workSet[n] = time
+            for item in workSet.items():
+                if time - item[1] >= window:
+                    workSet.pop(item[0])
+        else:
+            print "miss"
+            workSet[n] = time
+        print "WorkSet Now:"
+        for item in workSet.items():
+            print item[0]
