@@ -62,7 +62,9 @@ tf和context中的esp
 
 (7)fork()父子进程的返回值是不同的。这在源代码中的体现中哪？  
 ```
-父进程调用fork()的时候，会调用do_fork()函数， ret = proc->pid; 表明父进程得到的返回值是子进程的pid。 在do_fork()中调用copy_thread()， proc->tf->tf_regs.reg_eax = 0 设置了子进程被切换到时的返回值为0；    
+父进程调用fork()的时候，会调用do_fork()函数， ret = proc->pid; 
+表明父进程得到的返回值是子进程的pid。 
+在do_fork()中调用copy_thread()， proc->tf->tf_regs.reg_eax = 0 设置了子进程被切换到时的返回值为0；    
 ```  
 
 (8)内核线程initproc的第一次执行流程是什么样的？能跟踪出来吗？  
